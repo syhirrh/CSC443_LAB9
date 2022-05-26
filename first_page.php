@@ -11,7 +11,7 @@
 
     echo "Click <a href=next_page.php>Next Page</a>"
         ." to retrieve the values.<br>";
-    echo "<html><br>";
+    echo "</html><br>";
 
 ?>
 
