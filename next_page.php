@@ -1,22 +1,17 @@
 <?php
 
     session_start();
-    echo "<html>";
-    
-    $queryString = $_SERVER["QUERY_STRING"];
-    echo "Query string of the incoming URL: ".$queryString."\n";
+    $_SESSION = array();
 
-    echo "Cookies received:\n";
-    foreach ($_COOKIE as $name => $value) {
-        echo " $name = $value\n";
+    ig(isset($_COOKIE[session_name()])) {
+        setcookie(session_name(), '', time()-42000, '/');
     }
 
-    $myLogin = $_SESSION["myLogin"];
-    echo "Value of myLogin has been retrived: ".$myLogin."\n";
+    session_destroy();
 
-    $myColor = $_SESSION["myColor"];
-    echo "Value of myColor has been retrived: ".$myColor."\n";
-
-    echo "</html>\n";
+    echo "<html>";
+    echo "Thank you for visiting FYICenter.com.<br>";
+    echo " <a href=login.php>Login Again.</a><br>";
+    echo "</html><br>";
 
 ?>
