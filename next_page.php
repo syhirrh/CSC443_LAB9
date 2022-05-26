@@ -2,11 +2,14 @@
 
     session_start();
     echo "<html>";
+    
+    $queryString = $_SERVER["QUERY_STRING"];
+    echo "Query string of the incoming URL: ".$queryString."\n";
 
-    $sid = session_id();
-    echo "Session ID returned by session_id(): ".$sid."\n";
-    $sid = SID;
-    echo "Session ID returned by SID: ".$sid."\n";
+    echo "Cookies received:\n";
+    foreach ($_COOKIE as $name => $value) {
+        echo " $name = $value\n";
+    }
 
     $myLogin = $_SESSION["myLogin"];
     echo "Value of myLogin has been retrived: ".$myLogin."\n";
